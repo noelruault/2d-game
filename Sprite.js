@@ -32,9 +32,10 @@ class Sprite {
   }
 
   draw(ctx) {
-    // position of the character on the map. (16 = grid; 8, 18 = nudge)
-    const x = this.gameObject.x * 16 - 8;
-    const y = this.gameObject.y * 16 - 18;
+    // X and Y define the osition of the character on the map.
+    // The grid are embedded inside the gameObject and the numbers 8 and 18 refer to the nudge
+    const x = this.gameObject.x - 8;
+    const y = this.gameObject.y - 18;
 
     // Prints shadow first...
     this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
