@@ -29,7 +29,7 @@ class Sprite {
       "walk-up":    [[1, 2], [0, 2], [3, 2], [0, 2]],
       "walk-left":  [[1, 3], [0, 3], [3, 3], [0, 3]]
     }
-    this.currentAnimation = "walk-left" // config.currentAnimation || "idle-down";
+    this.currentAnimation = config.currentAnimation || "idle-down";
     this.currentAnimationFrame = 0;
 
     // movement cadence a.k.a character speed
@@ -70,11 +70,11 @@ class Sprite {
     }
   }
 
-  draw(ctx) {
+  draw(ctx, cameraPerson) {
     // X and Y define the osition of the character on the map.
     // The grid are embedded inside the gameObject and the numbers 8 and 18 refer to the nudge
-    const x = this.gameObject.x - 8;
-    const y = this.gameObject.y - 18;
+    const x = this.gameObject.x - 8 + utils.withGrid(10.5) - cameraPerson.x;
+    const y = this.gameObject.y - 18 + utils.withGrid(6) - cameraPerson.y;
 
     // Prints shadow first...
     this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
