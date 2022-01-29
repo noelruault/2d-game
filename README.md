@@ -8,6 +8,7 @@ Part 3: https://youtu.be/Bu0jT7xmdqI
 Part 4: https://youtu.be/AMHHUIkUX-g
 Part 5: https://youtu.be/Wo9tP6aBmr8
 Part 6: https://youtu.be/928rjpX3Axg
+Part 7: https://youtu.be/diyWzL5bdKY
 
 ## Map Dimensions
 
