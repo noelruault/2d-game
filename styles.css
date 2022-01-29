@@ -1,0 +1,27 @@
+/* rk: reset key: standarises things across browsers */
+* {
+  box-sizing:border-box; /* rk */
+}
+
+body {
+  background: #333;
+  padding: 0;       /* rk */
+  margin: 0;        /* rk */
+  overflow: hidden; /* rk */
+}
+
+.game-container {
+  position: relative;
+  width: 352px;
+  height: 198px;
+  margin: 0 auto; /* moves to the center of the screen */
+  outline: 1px solid #fff;
+
+  /* scale multiplies every pixel in the screen by 3 but overflows, so we use
+  tranlateY to move down 50% of the hight of the container */
+  transform: scale(3) translateY(50%);
+}
+
+.game-container canvas {
+  image-rendering: pixelated;
+}
