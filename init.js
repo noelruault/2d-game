@@ -1,8 +1,8 @@
-(function () { // function that executes itself
+(function() { // function that executes itself
 
   const overworld = new Overworld({
-    element: document.querySelector(".game-container")
-  });
+    element: document.querySelector(".game-container"),
+  })
 
-  overworld.init();
-})();
+  overworld.init()
+})()
