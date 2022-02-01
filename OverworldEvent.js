@@ -2,25 +2,25 @@
 // music changes, text, movements...
 class OverworldEvent {
   constructor({ map, event }) {
-    this.map = map
-    this.event = event
+    this.map = map;
+    this.event = event;
   }
 
   stand(resolve) {
-    const who = this.map.gameObjects[this.event.who]
+    const who = this.map.gameObjects[this.event.who];
     who.startBehavior({
-      map: this.map,
+      map: this.map
     }, {
       type: "stand",
       direction: this.event.direction,
-      time: this.event.time,
+      time: this.event.time
     })
 
     // Set up a handler to complete when correct person is done walking, then resolve the event
     const completeHandler = e => {
       if (e.detail.whoId === this.event.who) {
-        document.removeEventListener("PersonStandComplete", completeHandler)
-        resolve()
+        document.removeEventListener("PersonStandComplete", completeHandler);
+        resolve();
       }
     }
 
@@ -28,24 +28,43 @@ class OverworldEvent {
   }
 
   walk(resolve) {
-    const who = this.map.gameObjects[this.event.who]
+    const who = this.map.gameObjects[this.event.who];
     who.startBehavior({
-      map: this.map,
+      map: this.map
     }, {
       type: "walk",
       direction: this.event.direction,
-      retry: true, // just in case something interrupts a walk action
+      retry: true // just in case something interrupts a walk action
     })
 
     // Set up a handler to complete when correct person is done walking, then resolve the event
     const completeHandler = e => {
       if (e.detail.whoId === this.event.who) {
-        document.removeEventListener("PersonWalkingComplete", completeHandler)
-        resolve()
+        document.removeEventListener("PersonWalkingComplete", completeHandler);
+        resolve();
       }
     }
 
     document.addEventListener("PersonWalkingComplete", completeHandler)
+  }
+
+  textMessage(resolve) {
+    if (this.event.faceHero) {
+      const obj = this.map.gameObjects[this.event.faceHero];
+      obj.direction = utils.oppositeDirection(this.map.gameObjects["hero"].direction);
+    }
+
+    const message = new TextMessage({
+      text: this.event.text,
+      onComplete: () => resolve() // triggered when the player presses the 'accept' button
+    })
+
+    message.init(document.querySelector(".game-container"))
+  }
+
+  changeMap(resolve) {
+    this.map.overworld.startMap(window.OverworldMaps[this.event.map]);
+    resolve();
   }
 
   init() {

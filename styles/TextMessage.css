@@ -1,0 +1,34 @@
+.TextMessage {
+  height: 36px;
+  padding: 4px;
+  background: var(--menu-background);
+  border-top: 1px solid var(--menu-border-color);
+  color: var(--menu-font-color);
+
+  /* reset keys */
+   position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.TextMessage_p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.TextMessage_button {
+  right: 2px;
+
+  /* reset keys */
+  position: absolute;
+  background: none;
+  bottom: 0;
+  border:0;
+  cursor: pointer;
+  margin: 0;
+  font-size: 8px;
+  padding:0;
+  font-family: inherit;
+  -webkit-appearance: none;
+}

@@ -10,6 +10,7 @@ Part 5: https://youtu.be/Wo9tP6aBmr8
 Part 6: https://youtu.be/928rjpX3Axg
 Part 7: https://youtu.be/diyWzL5bdKY
 Part 8: https://youtu.be/e144CXGy2mc
+Part 9: https://youtu.be/U7fYOnedjzs
 
 ## Map Dimensions
 

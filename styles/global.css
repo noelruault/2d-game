@@ -1,13 +1,27 @@
-/* rk: reset key: standarises things across browsers */
+/* reset keys: standarise behavior across browsers */
+
+:root {
+  --border-color: #291D4D;
+  --dialog-background: #FFF3B4;
+
+  --menu-background: #FFE8D2;
+  --menu-border-color: #A48465;
+  --menu-font-color: #3A160D;
+  --menu-selected-background: #7fc2ff;
+}
+
 * {
-  box-sizing:border-box; /* rk */
+  /* reset keys */
+  box-sizing:border-box;
 }
 
 body {
   background: #333;
-  padding: 0;       /* rk */
-  margin: 0;        /* rk */
-  overflow: hidden; /* rk */
+
+  /* reset keys */
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .game-container {

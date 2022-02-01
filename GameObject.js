@@ -11,6 +11,8 @@ class GameObject {
     });
     this.behavior = config.behavior || [];
     this.behaviorIndex = 0;
+
+    this.talking = config.talking || [];
   }
 
   // doBehaviorEvent calls asynchronously all the behaviors associated to a certain character in
