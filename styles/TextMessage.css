@@ -6,10 +6,18 @@
   color: var(--menu-font-color);
 
   /* reset keys */
-   position: absolute;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.TextMessage span {
+  opacity: 0;
+}
+
+.TextMessage span.revealed {
+  opacity: 1;
 }
 
 .TextMessage_p {
