@@ -13,6 +13,15 @@ Part 08: [Behaviors & cutscenes](https://youtu.be/e144CXGy2mc)
 Part 09: [Expanded cutscene behaviors](https://youtu.be/U7fYOnedjzs)
 Part 10: [Typewriters & scene transitions](https://youtu.be/Ot3X2dYSr3Q)
 
+Skipping the Battle part of the series...
+
+Part 11: [Adding a HUD](https://youtu.be/2FUHEzML5lI)
+Part 12: [Pause menu](https://youtu.be/3_GEsGJyQXM)
+Part 12: [Story progress](https://youtu.be/RuqeAzQ8v-8)
+Part 14: [Creating pizzas for the lineup](https://youtu.be/r74OW5olIMI)
+Part 15: [Saving game progress](https://youtu.be/VedtaIr3SSc)
+Part 16: [Adding a title screen](https://youtu.be/hhz6gsv8T6E)
+
 ## Map Dimensions
 
 22 centimeters wide
@@ -22,6 +31,11 @@ Part 10: [Typewriters & scene transitions](https://youtu.be/Ot3X2dYSr3Q)
 
 Main character: 4.5
 Centering offset 10.5, 6
+
+## Development
+
+    yarn install
+    // Reload the editor
 
 ## Deployment
 

@@ -1,50 +1,50 @@
 class RevealingText {
-  constructor(config) {
-    this.element = config.element;
-    this.text = config.text;
-    this.speed = config.speed || 60;
+	constructor(config) {
+		this.element = config.element
+		this.text = config.text
+		this.speed = config.speed || 60
 
-    this.timeout = null;
-    this.isDone = false;
-  }
+		this.timeout = null
+		this.isDone = false
+	}
 
-  revealOneCharacter(list) {
-    const next = list.splice(0, 1)[0];
-    next.span.classList.add("revealed");
+	revealOneCharacter(list) {
+		const next = list.splice(0, 1)[0]
+		next.span.classList.add("revealed")
 
-    if (list.length > 0) {
-      this.timeout = setTimeout(() => {
-        this.revealOneCharacter(list)
-      }, next.delayAfter)
-    } else {
-      this.isDone = true;
-    }
-  }
+		if (list.length > 0) {
+			this.timeout = setTimeout(() => {
+				this.revealOneCharacter(list)
+			}, next.delayAfter)
+		} else {
+			this.isDone = true
+		}
+	}
 
-  warpToDone() {
-    clearTimeout(this.timeout);
-    this.isDone = true;
-    this.element.querySelectorAll("span").forEach(s => {
-      s.classList.add("revealed");
-    })
-  }
+	warpToDone() {
+		clearTimeout(this.timeout)
+		this.isDone = true
+		this.element.querySelectorAll("span").forEach(s => {
+			s.classList.add("revealed")
+		})
+	}
 
-  init() {
-    let characters = [];
-    this.text.split("").forEach(character => {
+	init() {
+		const characters = []
+		this.text.split("").forEach(character => {
 
-      // Create each span, add to element in DOM
-      let span = document.createElement("span");
-      span.textContent = character;
-      this.element.appendChild(span);
+			// Create each span, add to element in DOM
+			const span = document.createElement("span")
+			span.textContent = character
+			this.element.appendChild(span)
 
-      // Add this span to our internal state Array
-      characters.push({
-        span,
-        delayAfter: character === " " ? 0 : this.speed
-      })
-    })
+			// Add this span to our internal state Array
+			characters.push({
+				span,
+				delayAfter: character === " " ? 0 : this.speed,
+			})
+		})
 
-    this.revealOneCharacter(characters);
-  }
+		this.revealOneCharacter(characters)
+	}
 }

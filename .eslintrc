@@ -1,24 +1,37 @@
 /*
+https: //www.aleksandrhovhannisyan.com/blog/format-code-on-save-vs-code-eslint/#1-installing-eslint-optional-prettier
 https: //github.com/zaydek/dot-eslintrc.js/blob/master/dot-eslintrc.js
 */
 {
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended"
+    ],
     "env": {
         // https://eslint.org/docs/user-guide/configuring/language-options#specifying-environments
         "browser": true,
         "es6": true,
-        "jest": true,
-		"node": true
+        "jest": true
+        // "node": true
     },
-
-    "parser": "@babel/eslint-parser",
-
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
     "rules": {
+        // enforce consistent spacing between keys and values in object literal properties, a.k.a vertical align
+        // Why? -> https://shkspr.mobi/blog/2014/11/why-i-vertically-align-my-code-and-you-should-too/
+        "key-spacing": [
+            2,
+            {
+                "align": "value"
+            }
+        ],
         // enforce linebreaks after opening and before closing array brackets
         "array-bracket-newline": [
             1,
             "consistent"
         ],
+        "no-unused-vars": "off",
+        "no-undef": "off",
         // enforce consistent spacing inside array brackets
         "array-bracket-spacing": 1,
         // enforce line breaks after each array element
@@ -86,20 +99,11 @@ https: //github.com/zaydek/dot-eslintrc.js/blob/master/dot-eslintrc.js
         "implicit-arrow-linebreak": 1,
         // enforce consistent indentation.
         "indent": [
-            "error",
-            2 // default style is 4 spaces.
+            1,
+            "tab"
         ],
         // enforce the consistent use of either double or single quotes in JSX attributes
         "jsx-quotes": 1,
-        // enforce consistent spacing between keys and values in object literal properties
-        "key-spacing": [
-            1,
-            {
-                "beforeColon": false,
-                "afterColon": true,
-                "mode": "minimum"
-            }
-        ],
         // enforce consistent spacing before and after keywords
         "keyword-spacing": 1,
         // enforce consistent linebreak style
@@ -288,5 +292,11 @@ https: //github.com/zaydek/dot-eslintrc.js/blob/master/dot-eslintrc.js
         "yield-star-spacing": 0,
         // require or disallow "Yoda" conditions
         "yoda": 1
-    }
+    },
+    "ignorePatterns": [
+        "node_modules"
+        // "build",
+        // "dist",
+        // "public"
+    ]
 }
