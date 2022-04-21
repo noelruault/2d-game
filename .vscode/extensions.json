@@ -1,6 +1,7 @@
 {
 	// List of extensions which are recommended for users of this workspace.
 	"recommendations": [
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.live-server"
 	]
 }
